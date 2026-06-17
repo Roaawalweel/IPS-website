@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPS – International Digital Pioneer Schools</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B1464;--blue-dark:#0E0A3D;--blue-light:#ECE9F8;--sky:#D9D5F0;
+  --yellow:#4B3F99;--coral:#312870;--purple:#4B3F99;--green:#0E0A3D;
+  --white:#FFFFFF;--off:#F6F5FB;--text:#170F46;--muted:#5C5490;
+  --r:20px;--rl:32px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito','Tajawal',sans-serif;background:#fff;color:var(--text);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;background:rgba(255,255,255,0.95);backdrop-filter:blur(14px);border-bottom:1.5px solid rgba(27,20,100,0.15);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 24px rgba(27,20,100,0.13)}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-icon{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;color:#fff;letter-spacing:-1px;overflow:hidden;flex-shrink:0}
+.nav-icon img{width:100%;height:100%;object-fit:cover;display:block}
+.nav-text strong{display:block;font-size:14px;font-weight:800;color:var(--text)}
+.nav-text span{font-size:11px;color:var(--muted);font-weight:600}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{text-decoration:none;font-size:13px;font-weight:700;color:var(--muted);padding:7px 14px;border-radius:50px;transition:all .2s}
+.nav-links a:hover{color:var(--blue-dark);background:var(--blue-light)}
+.nav-cta{background:var(--blue)!important;color:#fff!important;box-shadow:0 4px 14px rgba(27,20,100,.35)}
+.nav-cta:hover{background:var(--blue-dark)!important;transform:translateY(-1px)}
+.lang-btn{display:flex;align-items:center;gap:6px;background:var(--blue-light);border:none;border-radius:50px;padding:7px 14px;cursor:pointer;font-size:13px;font-weight:700;color:var(--blue-dark);transition:all .2s;margin-left:8px;font-family:'Nunito',sans-serif}
+.lang-btn:hover{background:var(--sky)}
+
+#hero{min-height:100vh;padding:110px 5% 80px;display:flex;align-items:center;background:linear-gradient(160deg,#F6F5FB 0%,#ECE9F8 50%,#F6F5FB 100%);position:relative;overflow:hidden}
+.blob{position:absolute;border-radius:50%;opacity:.45;filter:blur(60px);animation:flt 6s ease-in-out infinite}
+.b1{width:420px;height:420px;background:#D9D5F0;top:-120px;right:-100px}
+.b2{width:300px;height:300px;background:#C7BFE3;bottom:-50px;left:-80px;animation-delay:2s}
+.b3{width:200px;height:200px;background:#E9E5F7;bottom:80px;right:22%;animation-delay:4s}
+@keyframes flt{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.05)}}
+
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1160px;margin:0 auto;position:relative;z-index:2;width:100%}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--blue-light);border-radius:50px;padding:7px 16px;font-size:13px;font-weight:700;color:var(--blue-dark);margin-bottom:18px;box-shadow:0 4px 16px rgba(27,20,100,.12)}
+.dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+h1.hero-title{font-size:clamp(34px,4.5vw,58px);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:16px}
+.acc{color:var(--blue)}.acc2{color:var(--coral)}
+.hero-sub{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:28px;font-weight:600}
+.hero-ar-box{font-family:'Tajawal',sans-serif;font-size:15px;color:var(--blue-dark);background:var(--blue-light);border-radius:12px;padding:12px 16px;margin-bottom:28px;direction:rtl;font-weight:700;line-height:1.8;border-right:4px solid var(--blue)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:none;padding:13px 26px;border-radius:50px;font-size:15px;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 8px 24px rgba(27,20,100,.4);transition:all .25s;font-family:'Nunito',sans-serif}
+.btn-p:hover{background:var(--blue-dark);transform:translateY(-3px)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--text);border:2px solid rgba(27,20,100,.3);padding:13px 26px;border-radius:50px;font-size:15px;font-weight:800;cursor:pointer;text-decoration:none;transition:all .25s}
+.btn-s:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-3px)}
+.stats{display:flex;gap:28px;margin-top:32px}
+.stat strong{display:block;font-size:30px;font-weight:900;color:var(--blue);line-height:1}
+.stat span{font-size:12px;font-weight:700;color:var(--muted)}
+
+.hero-visual{position:relative}
+.hcard{background:#fff;border-radius:var(--rl);padding:28px;box-shadow:0 20px 60px rgba(27,20,100,.18);border:2px solid rgba(27,20,100,.1)}
+.hcard img{width:100%;border-radius:var(--r);display:block}
+.hcard-lbl{display:flex;align-items:center;gap:10px;margin-top:14px}
+.hcard-lbl .ib{width:38px;height:38px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:18px}
+.hcard-lbl strong{font-size:14px;font-weight:800}
+.hcard-lbl span{font-size:12px;color:var(--muted);display:block}
+.pill{position:absolute;background:#fff;border-radius:50px;padding:9px 16px;box-shadow:0 8px 24px rgba(0,0,0,.1);font-size:13px;font-weight:800;display:flex;align-items:center;gap:6px;animation:fpill 4s ease-in-out infinite}
+.pill1{top:-18px;right:-18px;color:var(--coral);animation-delay:0s}
+.pill2{bottom:55px;left:-28px;color:var(--purple);animation-delay:1.5s}
+.pill3{bottom:-18px;right:18px;color:var(--green);animation-delay:3s}
+@keyframes fpill{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+section{padding:88px 5%}
+.sc{text-align:center;max-width:620px;margin:0 auto 52px}
+.ey{display:inline-block;font-size:12px;font-weight:800;color:var(--blue-dark);background:var(--blue-light);border-radius:50px;padding:5px 15px;margin-bottom:12px;letter-spacing:.5px}
+.stitle{font-size:clamp(26px,3.5vw,40px);font-weight:900;line-height:1.15;margin-bottom:12px}
+.ssub{font-size:16px;color:var(--muted);font-weight:600;line-height:1.7}
+
+.reveal{opacity:0;transform:translateY(28px);transition:all .65s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+
+#programs{background:var(--off)}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto}
+.pcard{background:#fff;border-radius:var(--rl);padding:34px 26px;border:2px solid transparent;transition:all .35s;position:relative;overflow:hidden}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--cc,var(--blue));transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.pcard:hover::before{transform:scaleX(1)}
+.pcard:hover{border-color:var(--cc,var(--blue));transform:translateY(-7px);box-shadow:0 20px 50px rgba(0,0,0,.09)}
+.picon{width:60px;height:60px;border-radius:16px;background:var(--cb,var(--blue-light));display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px;transition:transform .3s}
+.pcard:hover .picon{transform:scale(1.1) rotate(-5deg)}
+.pcard h3{font-size:19px;font-weight:800;margin-bottom:6px}
+.par{font-family:'Tajawal',sans-serif;font-size:14px;color:var(--muted);direction:rtl;margin-bottom:10px;font-weight:700}
+.pcard p{font-size:14px;color:var(--muted);line-height:1.7;font-weight:600}
+.ptag{display:inline-block;margin-top:16px;font-size:12px;font-weight:800;color:var(--cc,var(--blue));background:var(--cb,var(--blue-light));border-radius:50px;padding:4px 13px}
+
+#about{background:#fff}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto}
+.about-img{position:relative}
+.about-img img{width:100%;border-radius:var(--rl);display:block;box-shadow:0 16px 48px rgba(27,20,100,.18)}
+.about-badge{position:absolute;bottom:-20px;right:-20px;background:#fff;border-radius:var(--r);padding:18px 22px;box-shadow:0 12px 32px rgba(27,20,100,.18);text-align:center}
+.about-badge strong{display:block;font-size:28px;font-weight:900;color:var(--blue)}
+.about-badge span{font-size:12px;font-weight:700;color:var(--muted)}
+.about-text h2{font-size:clamp(28px,3.5vw,40px);font-weight:900;margin-bottom:14px}
+.about-text p{font-size:15px;color:var(--muted);line-height:1.8;font-weight:600;margin-bottom:14px}
+.about-list{list-style:none;margin:16px 0 24px}
+.about-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:700;color:var(--text);padding:8px 0;border-bottom:1px solid rgba(27,20,100,.1)}
+.about-list li:last-child{border:none}
+.about-list .ck{color:var(--green);font-size:18px}
+
+#testimonials{background:var(--off)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto}
+.tcard{background:#fff;border-radius:var(--r);padding:28px;border:2px solid rgba(27,20,100,.1);transition:all .3s}
+.tcard:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 12px 36px rgba(27,20,100,.12)}
+.stars{color:var(--yellow);font-size:16px;margin-bottom:12px}
+.tquote{font-size:14px;line-height:1.8;color:var(--muted);font-weight:600;margin-bottom:18px;font-style:italic}
+.tquote-ar{font-family:'Tajawal',sans-serif;direction:rtl;font-size:15px;color:var(--muted);line-height:1.9;font-weight:700;margin-bottom:18px}
+.tauthor{display:flex;align-items:center;gap:10px}
+.tavatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.tauthor strong{font-size:14px;font-weight:800;display:block}
+.tauthor span{font-size:12px;color:var(--muted);font-weight:600}
+
+#pricing{background:#fff}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin:0 auto}
+.prcard{background:#fff;border-radius:var(--rl);padding:32px 26px;border:2px solid rgba(27,20,100,.15);transition:all .3s;text-align:center}
+.prcard.featured{border-color:var(--blue);background:linear-gradient(160deg,#ECE9F8,#E5E1F5)}
+.prcard:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(27,20,100,.15)}
+.pr-badge{display:inline-block;background:var(--blue);color:#fff;border-radius:50px;padding:4px 14px;font-size:11px;font-weight:800;margin-bottom:14px}
+.prcard h3{font-size:20px;font-weight:900;margin-bottom:4px}
+.pr-ar{font-family:'Tajawal',sans-serif;font-size:13px;color:var(--muted);direction:rtl;margin-bottom:16px;font-weight:700}
+.pr-price{font-size:38px;font-weight:900;color:var(--blue);margin-bottom:4px;line-height:1}
+.pr-price sup{font-size:16px;vertical-align:top;margin-top:6px;display:inline-block}
+.pr-per{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:22px}
+.pr-list{list-style:none;text-align:left;margin-bottom:24px}
+.pr-list li{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--text);padding:6px 0;border-bottom:1px solid rgba(27,20,100,.08)}
+.pr-list li:last-child{border:none}
+.pr-list .on{color:var(--green)}
+.pr-list .off{color:#ccc}
+
+#faq{background:var(--off)}
+.faq-wrap{max-width:760px;margin:0 auto}
+.fitem{background:#fff;border-radius:var(--r);margin-bottom:12px;overflow:hidden;border:2px solid rgba(27,20,100,.1);transition:border-color .2s}
+.fitem.open{border-color:var(--blue)}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:pointer;gap:12px}
+.fq span.qt{font-size:15px;font-weight:800;color:var(--text);flex:1}
+.fq .arr{font-size:22px;color:var(--blue);transition:transform .3s;flex-shrink:0;font-weight:400}
+.fitem.open .arr{transform:rotate(45deg)}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.fitem.open .fa{max-height:400px}
+.fa-inner{padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.8;font-weight:600}
+.fa-ar{font-family:'Tajawal',sans-serif;font-size:14px;color:var(--muted);direction:rtl;line-height:1.9;font-weight:700;margin-top:10px;padding-top:10px;border-top:1px solid rgba(27,20,100,.1)}
+
+#gallery{background:#fff}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:14px;max-width:1100px;margin:0 auto}
+.gi{border-radius:var(--r);overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3}
+.gi:first-child{grid-column:span 2;aspect-ratio:16/9}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gi:hover img{transform:scale(1.07)}
+.gov{position:absolute;inset:0;background:linear-gradient(to top,rgba(23,15,70,.7) 0%,transparent 60%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:18px}
+.gi:hover .gov{opacity:1}
+.gov span{color:#fff;font-weight:800;font-size:14px}
+
+#contact{background:linear-gradient(135deg,#F6F5FB 0%,#ECE9F8 100%)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1100px;margin:0 auto}
+.cinfo h2{font-size:34px;font-weight:900;margin-bottom:12px}
+.cinfo > p{font-size:15px;color:var(--muted);font-weight:600;line-height:1.7;margin-bottom:28px}
+.ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+.ci-ico{width:46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 14px rgba(27,20,100,.15);flex-shrink:0;margin-top:2px}
+.ci-body strong{display:block;font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px}
+.ci-body span{display:block;font-size:13px;color:var(--muted);font-weight:600;line-height:1.6}
+.ci-body a{display:block;font-size:13px;color:var(--blue-dark);font-weight:700;text-decoration:none;line-height:1.9}
+.ci-body a:hover{color:var(--blue);text-decoration:underline}
+.map-wrap{margin-top:10px;border-radius:var(--r);overflow:hidden;border:2px solid rgba(27,20,100,.2)}
+.map-wrap iframe{width:100%;height:220px;border:none;display:block}
+.cform{background:#fff;border-radius:var(--rl);padding:34px;box-shadow:0 16px 48px rgba(27,20,100,.12)}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:13px;font-weight:800;color:var(--text);margin-bottom:6px}
+.fg input,.fg textarea,.fg select{width:100%;padding:11px 14px;border-radius:11px;border:2px solid rgba(27,20,100,.2);font-size:14px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--text);background:var(--off);outline:none;transition:all .2s;resize:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(27,20,100,.1)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-sub{width:100%;padding:14px;background:var(--blue);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:800;cursor:pointer;transition:all .25s;font-family:'Nunito',sans-serif;box-shadow:0 8px 24px rgba(27,20,100,.4)}
+.btn-sub:hover{background:var(--blue-dark);transform:translateY(-2px)}
+.btn-sub.sent{background:var(--green)}
+
+footer{background:var(--text);color:rgba(255,255,255,.85);padding:48px 5% 26px}
+.fi{display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto 34px;gap:40px}
+.fb strong{display:block;font-size:17px;font-weight:900;color:#fff;margin-bottom:5px}
+.fb > span{font-size:13px;opacity:.6;font-weight:600}
+.fb .far2{font-family:'Tajawal',sans-serif;direction:rtl;font-size:13px;opacity:.65;margin-top:4px}
+.soc{display:flex;gap:10px;margin-top:14px}
+.soc a{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;text-decoration:none;transition:all .2s}
+.soc a:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.flinks{display:flex;gap:40px}
+.fcol h4{font-size:12px;font-weight:800;color:var(--blue);margin-bottom:10px;letter-spacing:.5px}
+.fcol a{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:7px;transition:color .2s}
+.fcol a:hover{color:var(--blue)}
+.fbot{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;max-width:1100px;margin:0 auto;font-size:12px;opacity:.5}
+
+.en,.ar{display:block}
+body.ar .en{display:none}
+body.ar .ar{display:block}
+body.en .ar{display:none}
+body.en .en{display:block}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .prog-grid,.test-grid,.price-grid{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .gi:first-child{grid-column:span 2}
+  .contact-inner,.about-inner{grid-template-columns:1fr}
+  .about-img{display:none}
+  .fi{flex-direction:column}
+  .flinks{flex-wrap:wrap;gap:24px}
+  .nav-links{display:none}
+}
+@media(max-width:600px){
+  .prog-grid,.test-grid,.price-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr}
+  .gi:first-child{grid-column:span 1}
+  .frow{grid-template-columns:1fr}
+  .stats{gap:16px}
+}
+</style>
+</head>
+<body class="en">
+
+<!-- NAV -->
+<nav id="nb">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-icon"><img src="images/logo.jfif" alt="IPS Logo"></div>
+    <div class="nav-text">
+      <strong>Pioneer Schools</strong>
+      <span>مدارس الريادة الرقمية</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#hero" class="en">Home</a>
+    <a href="#hero" class="ar" style="font-family:'Tajawal',sans-serif">الرئيسية</a>
+    <a href="#programs" class="en">Programs</a>
+    <a href="#programs" class="ar" style="font-family:'Tajawal',sans-serif">البرامج</a>
+    <a href="#about" class="en">About</a>
+    <a href="#about" class="ar" style="font-family:'Tajawal',sans-serif">عن المدرسة</a>
+    <!-- <a href="#pricing" class="en">Pricing</a> -->
+    <!-- <a href="#pricing" class="ar" style="font-family:'Tajawal',sans-serif">الأسعار</a> -->
+    <a href="#contact" class="nav-cta en">Contact Us</a>
+    <a href="#contact" class="nav-cta ar" style="font-family:'Tajawal',sans-serif">تواصل معنا</a>
+  </div>
+  <button class="lang-btn" onclick="toggleLang()" id="lb">🌐 العربية</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="badge">
+        <span class="dot"></span>
+        <span class="en">Now Enrolling 2025–2026</span>
+        <span class="ar" style="font-family:'Tajawal',sans-serif">التسجيل مفتوح ٢٠٢٥–٢٠٢٦</span>
+      </div>
+      <h1 class="hero-title en">Where Kids Discover <span class="acc">Technology</span> &amp; <span class="acc2">Creativity</span></h1>
+      <h1 class="hero-title ar" style="font-family:'Tajawal',sans-serif;direction:rtl">حيث يكتشف الأطفال <span class="acc">التكنولوجيا</span> و<span class="acc2">الإبداع</span></h1>
+      <p class="hero-sub en">Empowering the next generation through hands-on Robotics, 3D Printing, and Virtual Reality learning experiences.</p>
+      <p class="hero-sub ar" style="font-family:'Tajawal',sans-serif;direction:rtl">نمكّن الجيل القادم من خلال تجارب تعليمية عملية في الروبوتيكس والطباعة ثلاثية الأبعاد والواقع الافتراضي.</p>
+      <div class="hero-ar-box en">🌟 نرحّب بأبنائكم في مدارس الريادة الرقمية الدولية — مستقبل التعليم بين أيديكم</div>
+      <div class="hero-btns">
+        <a href="#programs" class="btn-p">🚀 <span class="en">Explore Programs</span><span class="ar" style="font-family:'Tajawal',sans-serif">استكشف البرامج</span></a>
+        <a href="#contact" class="btn-s">💬 <span class="en">Get in Touch</span><span class="ar" style="font-family:'Tajawal',sans-serif">تواصل معنا</span></a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>150+</strong><span class="en">Students</span><span class="ar" style="font-family:'Tajawal',sans-serif">طالب</span></div>
+        <div class="stat"><strong>3</strong><span class="en">Programs</span><span class="ar" style="font-family:'Tajawal',sans-serif">برامج</span></div>
+        <div class="stat"><strong>5★</strong><span class="en">Parent Rating</span><span class="ar" style="font-family:'Tajawal',sans-serif">تقييم الأهل</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hcard">
+        <img src="https://images.unsplash.com/photo-1581092921461-7d65ca45393a?w=560&q=80&auto=format&fit=crop" alt="Kids learning robotics"/>
+        <div class="hcard-lbl">
+          <div class="ib">🤖</div>
+          <div><strong>Robotics Class in Session</strong><span>Building tomorrow's engineers today</span></div>
+        </div>
+      </div>
+      <div class="pill pill1">🎮 Virtual Reality</div>
+      <div class="pill pill2">🖨️ 3D Printing</div>
+      <div class="pill pill3">🏆 Award-Winning</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="sc reveal">
+    <div class="ey">Our Programs | برامجنا</div>
+    <h2 class="stitle en">Learning That Inspires</h2>
+    <h2 class="stitle ar" style="font-family:'Tajawal',sans-serif">تعلّم يُلهم</h2>
+    <p class="ssub en">Three world-class programs designed to nurture creativity, critical thinking, and a love of learning.</p>
+    <p class="ssub ar" style="font-family:'Tajawal',sans-serif;direction:rtl">ثلاثة برامج عالمية مصمّمة لتنمية الإبداع والتفكير النقدي وحب التعلم لدى كل طفل.</p>
+  </div>
+  <div class="prog-grid">
+    <div class="pcard reveal" style="--cc:#1B1464;--cb:#ECE9F8">
+      <div class="picon">🤖</div>
+      <h3 class="en">Robotics</h3>
+      <h3 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">الروبوتيكس</h3>
+      <div class="par">تصميم وبناء وبرمجة الروبوتات</div>
+      <p class="en">Kids design, build, and program real robots. They learn teamwork, problem-solving, and engineering fundamentals through exciting hands-on challenges.</p>
+      <p class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">يصمّم الأطفال ويبنون ويبرمجون روبوتات حقيقية، ويتعلمون العمل الجماعي وحل المشكلات والأساسيات الهندسية.</p>
+      <span class="ptag en">Ages 7–16 · Hands-on</span>
+      <span class="ptag ar" style="font-family:'Tajawal',sans-serif">٧–١٦ سنة · تطبيقي</span>
+    </div>
+    <div class="pcard reveal" style="--cc:#4B3F99;--cb:#ECE9F8;animation-delay:.1s">
+      <div class="picon">🖨️</div>
+      <h3 class="en">3D Printing</h3>
+      <h3 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">الطباعة ثلاثية الأبعاد</h3>
+      <div class="par">تحويل الأفكار إلى واقع ملموس</div>
+      <p class="en">Students turn their ideas into physical objects. From digital design to printed creation — they experience the full magic of modern making.</p>
+      <p class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">يحوّل الطلاب أفكارهم إلى أجسام حقيقية، من التصميم الرقمي إلى المنتج المطبوع ثلاثي الأبعاد.</p>
+      <span class="ptag en">Ages 8–16 · Creative</span>
+      <span class="ptag ar" style="font-family:'Tajawal',sans-serif">٨–١٦ سنة · إبداعي</span>
+    </div>
+    <div class="pcard reveal" style="--cc:#0E0A3D;--cb:#E5E2F2;animation-delay:.2s">
+      <div class="picon">🥽</div>
+      <h3 class="en">Virtual Reality</h3>
+      <h3 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">الواقع الافتراضي</h3>
+      <div class="par">تجارب تعليمية غامرة لا تُنسى</div>
+      <p class="en">Immersive VR experiences take learning beyond the classroom. Explore space, history, and science in ways never possible before.</p>
+      <p class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">تأخذ تجارب الواقع الافتراضي الغامرة التعلم إلى ما هو أبعد من الفصل الدراسي، عبر استكشاف الفضاء والتاريخ والعلوم.</p>
+      <span class="ptag en">Ages 9–16 · Immersive</span>
+      <span class="ptag ar" style="font-family:'Tajawal',sans-serif">٩–١٦ سنة · غامر</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img reveal">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80&auto=format&fit=crop" alt="Students learning"/>
+      <div class="about-badge"><strong>2+</strong><span class="en">Years of Excellence</span><span class="ar" style="font-family:'Tajawal',sans-serif">سنوات من التميز</span></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="ey">About IPS | عن المدرسة</div>
+      <h2 class="en">Built for the Curious Minds of Tomorrow</h2>
+      <h2 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">بُنيت لعقول الغد الفضولية</h2>
+      <p class="en">IPS – International Digital Pioneer Schools was founded in amman, Jordan with one mission: to give every child access to the technology skills that define the future. We believe learning should be exciting, hands-on, and deeply meaningful.</p>
+      <p class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">تأسست مدارس الريادة الرقمية الدولية في إربد، الأردن، برسالة واحدة: منح كل طفل إمكانية الوصول إلى مهارات التكنولوجيا التي تحدد مستقبل العالم.</p>
+      <ul class="about-list">
+        <li><span class="ck">✓</span><span class="en">Certified instructors with real-world tech experience</span><span class="ar" style="font-family:'Tajawal',sans-serif">مدرّسون معتمدون بخبرة تقنية حقيقية</span></li>
+        <li><span class="ck">✓</span><span class="en">Small class sizes — max 12 students per group</span><span class="ar" style="font-family:'Tajawal',sans-serif">فصول صغيرة — بحد أقصى ١٢ طالبًا لكل مجموعة</span></li>
+        <li><span class="ck">✓</span><span class="en">Professional-grade equipment for every student</span><span class="ar" style="font-family:'Tajawal',sans-serif">معدات احترافية لكل طالب</span></li>
+        <li><span class="ck">✓</span><span class="en">Regular progress reports shared with parents</span><span class="ar" style="font-family:'Tajawal',sans-serif">تقارير تقدم منتظمة تُشارك مع أولياء الأمور</span></li>
+        <li><span class="ck">✓</span><span class="en">Competitions, showcases & graduation certificates</span><span class="ar" style="font-family:'Tajawal',sans-serif">مسابقات وعروض وشهادات تخرج</span></li>
+      </ul>
+      <a href="#contact" class="btn-p">📋 <span class="en">Book a Free Tour</span><span class="ar" style="font-family:'Tajawal',sans-serif">احجز جولة مجانية</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="sc reveal">
+    <div class="ey">What Parents Say | ماذا يقول الأهل</div>
+    <h2 class="stitle en">Families Love IPS</h2>
+    <h2 class="stitle ar" style="font-family:'Tajawal',sans-serif">العائلات تُحب IPS</h2>
+    <p class="ssub en">Real stories from real parents across and beyond.</p>
+    <p class="ssub ar" style="font-family:'Tajawal',sans-serif;direction:rtl">قصص حقيقية من أهالٍ حقيقيين في إربد وخارجها.</p>
+  </div>
+  <div class="test-grid">
+    <div class="tcard reveal">
+      <div class="stars">★★★★★</div>
+      <p class="tquote en">"My son used to hate studying. After joining the Robotics program, he built his first robot in week 3 and hasn't stopped talking about engineering since. IPS changed everything."</p>
+      <p class="tquote-ar ar">"كان ابني يكره الدراسة. بعد انضمامه لبرنامج الروبوتيكس، بنى روبوته الأول في الأسبوع الثالث ولم يتوقف عن الحديث عن الهندسة منذ ذلك الحين. IPS غيّرت كل شيء."</p>
+      <div class="tauthor">
+        <div class="tavatar" style="background:linear-gradient(135deg,#1B1464,#4B3F99)">أح</div>
+        <div><strong class="en">Ahmad Al-Khalil</strong><strong class="ar" style="font-family:'Tajawal',sans-serif">أحمد الخليل</strong><span class="en">Father of Robotics student</span><span class="ar" style="font-family:'Tajawal',sans-serif">والد طالب روبوتيكس</span></div>
+      </div>
+    </div>
+    <div class="tcard reveal" style="animation-delay:.1s">
+      <div class="stars">★★★★★</div>
+      <p class="tquote en">"The 3D printing program gave my daughter a real skill. She designed and printed a custom phone stand as a gift for her grandmother. The pride on her face was priceless."</p>
+      <p class="tquote-ar ar">"منح برنامج الطباعة ثلاثية الأبعاد ابنتي مهارة حقيقية. صمّمت وطبعت حاملة هاتف مخصصة كهدية لجدتها. الفخر على وجهها كان لا يقدر بثمن."</p>
+      <div class="tauthor">
+        <div class="tavatar" style="background:linear-gradient(135deg,#0E0A3D,#1B1464)">رم</div>
+        <div><strong class="en">Rima Mansour</strong><strong class="ar" style="font-family:'Tajawal',sans-serif">ريما منصور</strong><span class="en">Mother of 3D Printing student</span><span class="ar" style="font-family:'Tajawal',sans-serif">أم طالبة طباعة ثلاثية الأبعاد</span></div>
+      </div>
+    </div>
+    <div class="tcard reveal" style="animation-delay:.2s">
+      <div class="stars">★★★★★</div>
+      <p class="tquote en">"We were nervous about VR for our 10-year-old, but the team at IPS is incredibly professional. She now explains ancient Rome to us at dinner. Unbelievable program."</p>
+      <p class="tquote-ar ar">"كنا قلقين على الواقع الافتراضي لطفلتنا البالغة ١٠ سنوات، لكن فريق IPS محترف بشكل لا يصدق. أصبحت تشرح لنا روما القديمة على العشاء. برنامج لا يصدق."</p>
+      <div class="tauthor">
+        <div class="tavatar" style="background:linear-gradient(135deg,#312870,#4B3F99)">خس</div>
+        <div><strong class="en">Khaled & Sara Nasser</strong><strong class="ar" style="font-family:'Tajawal',sans-serif">خالد وسارة ناصر</strong><span class="en">Parents of VR student</span><span class="ar" style="font-family:'Tajawal',sans-serif">والدا طالبة واقع افتراضي</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING
+<section id="pricing">
+  <div class="sc reveal">
+    <div class="ey">Pricing | الأسعار</div>
+    <h2 class="stitle en">Simple, Transparent Pricing</h2>
+    <h2 class="stitle ar" style="font-family:'Tajawal',sans-serif">أسعار واضحة وشفافة</h2>
+    <p class="ssub en">Choose the plan that fits your child best. All plans include equipment & materials.</p>
+    <p class="ssub ar" style="font-family:'Tajawal',sans-serif;direction:rtl">اختر الخطة الأنسب لطفلك. تشمل جميع الخطط المعدات والمواد.</p>
+  </div>
+  <div class="price-grid">
+    <div class="prcard reveal">
+      <h3 class="en">Starter</h3>
+      <h3 class="ar" style="font-family:'Tajawal',sans-serif">المبتدئ</h3>
+      <div class="pr-ar">برنامج واحد</div>
+      <div class="pr-price"><sup>JOD </sup>35</div>
+      <p class="pr-per en">per month · 1 program</p>
+      <p class="pr-per ar" style="font-family:'Tajawal',sans-serif">شهريًا · لبرنامج واحد</p>
+      <ul class="pr-list">
+        <li><span class="on">✓</span><span class="en">1 program of choice</span><span class="ar" style="font-family:'Tajawal',sans-serif">برنامج واحد بالاختيار</span></li>
+        <li><span class="on">✓</span><span class="en">Weekly 2-hour sessions</span><span class="ar" style="font-family:'Tajawal',sans-serif">جلسات أسبوعية ساعتان</span></li>
+        <li><span class="on">✓</span><span class="en">Progress reports</span><span class="ar" style="font-family:'Tajawal',sans-serif">تقارير تقدم</span></li>
+        <li><span class="on">✓</span><span class="en">Completion certificate</span><span class="ar" style="font-family:'Tajawal',sans-serif">شهادة إتمام</span></li>
+        <li><span class="off">–</span><span class="en">Competition entry</span><span class="ar" style="font-family:'Tajawal',sans-serif">المشاركة في المسابقات</span></li>
+      </ul>
+      <a href="#contact" class="btn-p" style="display:block;text-align:center">
+        <span class="en">Get Started</span><span class="ar" style="font-family:'Tajawal',sans-serif">ابدأ الآن</span>
+      </a>
+    </div>
+    <div class="prcard featured reveal" style="animation-delay:.1s">
+      <div class="pr-badge">⭐ Most Popular | الأكثر شيوعًا</div>
+      <h3 class="en">Explorer</h3>
+      <h3 class="ar" style="font-family:'Tajawal',sans-serif">المستكشف</h3>
+      <div class="pr-ar">برنامجان</div>
+      <div class="pr-price"><sup>JOD </sup>60</div>
+      <p class="pr-per en">per month · 2 programs</p>
+      <p class="pr-per ar" style="font-family:'Tajawal',sans-serif">شهريًا · برنامجان</p>
+      <ul class="pr-list">
+        <li><span class="on">✓</span><span class="en">2 programs of choice</span><span class="ar" style="font-family:'Tajawal',sans-serif">برنامجان بالاختيار</span></li>
+        <li><span class="on">✓</span><span class="en">Twice-weekly sessions</span><span class="ar" style="font-family:'Tajawal',sans-serif">جلستان أسبوعيتان</span></li>
+        <li><span class="on">✓</span><span class="en">Priority progress reports</span><span class="ar" style="font-family:'Tajawal',sans-serif">تقارير تقدم أولوية</span></li>
+        <li><span class="on">✓</span><span class="en">Completion certificate</span><span class="ar" style="font-family:'Tajawal',sans-serif">شهادة إتمام</span></li>
+        <li><span class="on">✓</span><span class="en">Competition entry included</span><span class="ar" style="font-family:'Tajawal',sans-serif">المشاركة في المسابقات</span></li>
+      </ul>
+      <a href="#contact" class="btn-p" style="display:block;text-align:center">
+        <span class="en">Get Started</span><span class="ar" style="font-family:'Tajawal',sans-serif">ابدأ الآن</span>
+      </a>
+    </div>
+    <div class="prcard reveal" style="animation-delay:.2s">
+      <h3 class="en">Pioneer</h3>
+      <h3 class="ar" style="font-family:'Tajawal',sans-serif">الرائد</h3>
+      <div class="pr-ar">جميع البرامج</div>
+      <div class="pr-price"><sup>JOD </sup>85</div>
+      <p class="pr-per en">per month · all 3 programs</p>
+      <p class="pr-per ar" style="font-family:'Tajawal',sans-serif">شهريًا · جميع البرامج الثلاثة</p>
+      <ul class="pr-list">
+        <li><span class="on">✓</span><span class="en">All 3 programs</span><span class="ar" style="font-family:'Tajawal',sans-serif">جميع البرامج الثلاثة</span></li>
+        <li><span class="on">✓</span><span class="en">Flexible daily sessions</span><span class="ar" style="font-family:'Tajawal',sans-serif">جلسات يومية مرنة</span></li>
+        <li><span class="on">✓</span><span class="en">Monthly parent meeting</span><span class="ar" style="font-family:'Tajawal',sans-serif">اجتماع شهري مع الأهل</span></li>
+        <li><span class="on">✓</span><span class="en">Completion certificate</span><span class="ar" style="font-family:'Tajawal',sans-serif">شهادة إتمام</span></li>
+        <li><span class="on">✓</span><span class="en">VIP competition team</span><span class="ar" style="font-family:'Tajawal',sans-serif">فريق مسابقات VIP</span></li>
+      </ul>
+      <a href="#contact" class="btn-p" style="display:block;text-align:center">
+        <span class="en">Get Started</span><span class="ar" style="font-family:'Tajawal',sans-serif">ابدأ الآن</span>
+      </a>
+    </div>
+  </div>
+</section> -->
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="sc reveal">
+    <div class="ey">FAQ | الأسئلة الشائعة</div>
+    <h2 class="stitle en">Questions? We've Got Answers</h2>
+    <h2 class="stitle ar" style="font-family:'Tajawal',sans-serif">أسئلة؟ لدينا الإجابات</h2>
+  </div>
+  <div class="faq-wrap">
+    <div class="fitem reveal">
+      <div class="fq" onclick="toggleFaq(this)">
+        <span class="qt en">What age groups do you accept?</span>
+        <span class="qt ar" style="font-family:'Tajawal',sans-serif;direction:rtl">ما هي الفئات العمرية التي تقبلونها؟</span>
+        <span class="arr">+</span>
+      </div>
+      <div class="fa"><div class="fa-inner">
+        <span class="en">We welcome students from age 7 to 16. Each program has a recommended age range, but we assess each child individually to ensure the best fit.</span>
+        <div class="fa-ar ar">نرحّب بالطلاب من سن ٧ إلى ١٦ عامًا. لكل برنامج نطاق عمري موصى به، لكننا نقيّم كل طفل بشكل فردي لضمان أفضل ملاءمة.</div>
+      </div></div>
+    </div>
+    <div class="fitem reveal">
+      <div class="fq" onclick="toggleFaq(this)">
+        <span class="qt en">Do my kids need any prior experience?</span>
+        <span class="qt ar" style="font-family:'Tajawal',sans-serif;direction:rtl">هل يحتاج أطفالي إلى خبرة مسبقة؟</span>
+        <span class="arr">+</span>
+      </div>
+      <div class="fa"><div class="fa-inner">
+        <span class="en">Absolutely not! All our programs start from zero. Beginners are very welcome — in fact, it's even more exciting watching a child discover these technologies for the first time.</span>
+        <div class="fa-ar ar">لا على الإطلاق! جميع برامجنا تبدأ من الصفر. المبتدئون مرحّب بهم جدًا — بل إن مشاهدة طفل يكتشف هذه التقنيات لأول مرة أمر أكثر إثارة.</div>
+      </div></div>
+    </div>
+    <div class="fitem reveal">
+      <div class="fq" onclick="toggleFaq(this)">
+        <span class="qt en">Where exactly are you located?</span>
+        <span class="qt ar" style="font-family:'Tajawal',sans-serif;direction:rtl">أين تقع المدرسة بالضبط؟</span>
+        <span class="arr">+</span>
+      </div>
+      <div class="fa"><div class="fa-inner">
+        <span class="en">We are located on Al-Salam Street, Dead Sea Road — Naour Al-Jadida, Balaas, behind Green Land, Amman, Jordan. Call us and we'll help you find us easily.</span>
+        <div class="fa-ar ar">نقع في شارع السلام، طريق البحر الميت — نوار الجديدة، بلعص، خلف غرين لاند، إربد، الأردن. اتصل بنا وسنساعدك في الوصول بسهولة.</div>
+      </div></div>
+    </div>
+    <div class="fitem reveal">
+      <div class="fq" onclick="toggleFaq(this)">
+        <span class="qt en">How many students are in each class?</span>
+        <span class="qt ar" style="font-family:'Tajawal',sans-serif;direction:rtl">كم عدد الطلاب في كل فصل؟</span>
+        <span class="arr">+</span>
+      </div>
+      <div class="fa"><div class="fa-inner">
+        <span class="en">We keep class sizes small — a maximum of 12 students per group. This ensures every child gets enough attention and hands-on time with the equipment.</span>
+        <div class="fa-ar ar">نحافظ على صغر حجم الفصول — بحد أقصى ١٢ طالبًا لكل مجموعة. هذا يضمن حصول كل طفل على اهتمام كافٍ ووقت كافٍ مع المعدات.</div>
+      </div></div>
+    </div>
+    <div class="fitem reveal">
+      <div class="fq" onclick="toggleFaq(this)">
+        <span class="qt en">Can I visit before enrolling?</span>
+        <span class="qt ar" style="font-family:'Tajawal',sans-serif;direction:rtl">هل يمكنني الزيارة قبل التسجيل؟</span>
+        <span class="arr">+</span>
+      </div>
+      <div class="fa"><div class="fa-inner">
+        <span class="en">Yes! We offer free tours for families. Book one through our contact form or call us directly. We love showing parents and children around our space.</span>
+        <div class="fa-ar ar">نعم! نقدم جولات مجانية للعائلات. احجز واحدة من خلال نموذج الاتصال أو اتصل بنا مباشرة. نحب إظهار الوالدين والأطفال في مساحتنا.</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="sc reveal">
+    <div class="ey">Gallery | معرض الصور</div>
+    <h2 class="stitle en">Life at IPS</h2>
+    <h2 class="stitle ar" style="font-family:'Tajawal',sans-serif">الحياة في مدارس IPS</h2>
+    <p class="ssub en">A glimpse into the vibrant, creative world our students experience every day.</p>
+    <p class="ssub ar" style="font-family:'Tajawal',sans-serif;direction:rtl">لمحة من عالم طلابنا المبدع الحيوي كل يوم.</p>
+  </div>
+  <div class="gal-grid reveal">
+    <div class="gi"><img src="https://images.unsplash.com/photo-1581092921461-7d65ca45393a?w=800&q=80&auto=format&fit=crop" alt="Robotics workshop"/><div class="gov"><span>🤖 Robotics Workshop</span></div></div>
+    <div class="gi"><img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&q=80&auto=format&fit=crop" alt="3D printing"/><div class="gov"><span>🖨️ 3D Printing Lab</span></div></div>
+    <div class="gi"><img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=500&q=80&auto=format&fit=crop" alt="VR experience"/><div class="gov"><span>🥽 VR Experience</span></div></div>
+    <div class="gi"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500&q=80&auto=format&fit=crop" alt="Learning"/><div class="gov"><span>📚 Creative Learning</span></div></div>
+    <div class="gi"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&q=80&auto=format&fit=crop" alt="Teamwork"/><div class="gov"><span>🤝 Teamwork & Fun</span></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="cinfo reveal">
+      <div class="ey">Get in Touch | تواصل معنا</div>
+      <h2 class="en">Ready to Join Our Family?</h2>
+      <h2 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">مستعد للانضمام إلى عائلتنا؟</h2>
+      <p class="en">We'd love to tell you more about our programs. Our team responds within 24 hours.</p>
+      <p class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">يسعدنا إخبارك بالمزيد عن برامجنا. يردّ فريقنا خلال ٢٤ ساعة.</p>
+
+      <div class="ci">
+        <div class="ci-ico">📞</div>
+        <div class="ci-body">
+          <strong class="en">Phone Numbers | أرقام الهاتف</strong>
+          <a href="tel:0799372646">079 937 2646</a>
+          <a href="tel:0796223417">079 622 3417</a>
+          <a href="tel:065712123">065 712 123</a>
+        </div>
+      </div>
+
+      <div class="ci">
+        <div class="ci-ico">📍</div>
+        <div class="ci-body">
+          <strong class="en">Address | العنوان</strong>
+          <span class="en">Al-Salam Street, Dead Sea Road<br>Naour Al-Jadida — Balaas<br>Behind Green Land, Amman, Jordan 🇯🇴</span>
+          <span class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">شارع السلام، طريق البحر الميت<br>نوار الجديدة — بلعص<br>خلف غرين لاند، إربد، الأردن 🇯🇴</span>
+        </div>
+      </div>
+
+      <div class="ci">
+        <div class="ci-ico">📘</div>
+        <div class="ci-body">
+          <strong>Social Media | التواصل الاجتماعي</strong>
+          <span>Facebook & Instagram: <strong>@i.p.s0</strong></span>
+        </div>
+      </div>
+
+      <!-- GOOGLE MAP EMBED — Naour Al-Jadida, Balaas, Amman -->
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3388.49432516136!2d35.841285475083545!3d31.865972929986853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca7000ddf6cbf%3A0x4e54fa3a27cdf7b!2sInternational%20digital%20pioneer%20school!5e0!3m2!1sen!2sjo!4v1781688979354!5m2!1sen!2sjo" 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="IPS Location — Naour Al-Jadida, Balaas, Amman">
+        </iframe>
+      </div>
+      <a href="https://maps.google.com/?q=Naour+Al-Jadida,+Balaas,+Amman,+Jordan" target="_blank" class="btn-s" style="margin-top:14px;display:inline-flex">
+        🗺️ <span class="en">Open in Google Maps</span><span class="ar" style="font-family:'Tajawal',sans-serif">افتح في خرائط جوجل</span>
+      </a>
+    </div>
+
+    <div class="cform reveal">
+      <h3 class="en" style="font-size:19px;font-weight:900;margin-bottom:6px">Send us a Message</h3>
+      <h3 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl;font-size:19px;font-weight:900;margin-bottom:6px">أرسل لنا رسالة</h3>
+      <p style="font-size:13px;color:var(--muted);font-weight:600;margin-bottom:20px" class="en">We'll respond within 24 hours.</p>
+      <p style="font-size:13px;color:var(--muted);font-weight:600;margin-bottom:20px;font-family:'Tajawal',sans-serif;direction:rtl" class="ar">سنردّ خلال ٢٤ ساعة.</p>
+      <div class="frow">
+        <div class="fg">
+          <label class="en">First Name</label><label class="ar" style="font-family:'Tajawal',sans-serif">الاسم الأول</label>
+          <input type="text" placeholder="Ahmad">
+        </div>
+        <div class="fg">
+          <label class="en">Last Name</label><label class="ar" style="font-family:'Tajawal',sans-serif">اسم العائلة</label>
+          <input type="text" placeholder="Al-Hassan">
+        </div>
+      </div>
+      <div class="fg">
+        <label class="en">Email Address</label><label class="ar" style="font-family:'Tajawal',sans-serif">البريد الإلكتروني</label>
+        <input type="email" placeholder="ahmad@example.com">
+      </div>
+      <div class="fg">
+        <label class="en">Phone Number</label><label class="ar" style="font-family:'Tajawal',sans-serif">رقم الهاتف</label>
+        <input type="tel" placeholder="07X XXX XXXX">
+      </div>
+      <div class="fg">
+        <label class="en">Child's Age</label><label class="ar" style="font-family:'Tajawal',sans-serif">عمر الطفل</label>
+        <select>
+          <option value="">Select age range...</option>
+          <option>7–9 years</option>
+          <option>10–12 years</option>
+          <option>13–16 years</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="en">Program of Interest</label><label class="ar" style="font-family:'Tajawal',sans-serif">البرنامج المهتم به</label>
+        <select>
+          <option value="">Select a program...</option>
+          <option>🤖 Robotics | الروبوتيكس</option>
+          <option>🖨️ 3D Printing | الطباعة ثلاثية الأبعاد</option>
+          <option>🥽 Virtual Reality | الواقع الافتراضي</option>
+          <option>📚 All Programs | جميع البرامج</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="en">Message</label><label class="ar" style="font-family:'Tajawal',sans-serif">الرسالة</label>
+        <textarea rows="4" placeholder="Tell us about your child and any questions you have..."></textarea>
+      </div>
+      <button class="btn-sub" id="sbtn" onclick="handleSend()">
+        <span class="en">✉️ Send Message</span>
+        <span class="ar" style="font-family:'Tajawal',sans-serif">✉️ إرسال الرسالة</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div class="fb">
+      <strong>IPS — International Digital Pioneer Schools</strong>
+      <span>Empowering kids through digital education</span>
+      <div class="far2">مدارس الريادة الرقمية الدولية — نمكّن الأطفال من خلال التعليم الرقمي</div>
+      <div class="soc">
+        <a href="https://www.facebook.com/p/International-Digital-Pioneer-Schools-مدارس-الريادة-الرقمية-الدولية-61556923075731/" title="Facebook">f</a>
+        <a href="https://www.instagram.com/i.p.s0/" title="Instagram">ig</a>
+        <a href="tel:0799372646" title="Call">📞</a>
+      </div>
+    </div>
+    <div class="flinks">
+      <div class="fcol">
+        <h4>NAVIGATE</h4>
+        <a href="#hero">Home</a>
+        <a href="#programs">Programs</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="fcol">
+        <h4>PROGRAMS</h4>
+        <a href="#programs">🤖 Robotics</a>
+        <a href="#programs">🖨️ 3D Printing</a>
+        <a href="#programs">🥽 Virtual Reality</a>
+      </div>
+      <div class="fcol">
+        <h4>CONTACT</h4>
+        <a href="tel:0799372646">079 937 2646</a>
+        <a href="tel:0796223417">079 622 3417</a>
+        <a href="tel:065712123">065 712 123</a>
+        <a href="https://maps.google.com/?q=Naour+Al-Jadida,+Balaas,+Amman,+Jordan" target="_blank">📍 Get Directions</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2025 International Digital Pioneer Schools. All rights reserved.</span>
+    <span>Naour Al-Jadida, Balaas — Amman, Jordan 🇯🇴</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nb').classList.toggle('scrolled',scrollY>20)
+})
+
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('vis'),i*80)
+  })
+},{threshold:0.1})
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r))
+
+let isAr=false
+function toggleLang(){
+  isAr=!isAr
+  document.body.className=isAr?'ar':'en'
+  document.documentElement.setAttribute('dir',isAr?'rtl':'ltr')
+  document.getElementById('lb').textContent=isAr?'🌐 English':'🌐 العربية'
+}
+
+function toggleFaq(el){
+  const item=el.closest('.fitem')
+  const wasOpen=item.classList.contains('open')
+  document.querySelectorAll('.fitem').forEach(f=>f.classList.remove('open'))
+  if(!wasOpen) item.classList.add('open')
+}
+
+function handleSend(){
+  const btn=document.getElementById('sbtn')
+  btn.classList.add('sent')
+  btn.innerHTML='✅ Message Sent! We\'ll be in touch soon.'
+  setTimeout(()=>{
+    btn.classList.remove('sent')
+    btn.innerHTML='<span class="en">✉️ Send Message</span><span class="ar" style="font-family:Tajawal,sans-serif">✉️ إرسال الرسالة</span>'
+  },4000)
+}
+</script>
+</body>
+</html>
