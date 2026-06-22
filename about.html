@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About IPS — International Digital Pioneer Schools | Amman, Jordan</title>
+<meta name="description" content="Learn about International Digital Pioneer Schools (IPS) in Amman, Jordan, and get in touch — phone, address, map, and contact form.">
+<link rel="canonical" href="https://www.ips-jo.com/about.html">
+<link rel="icon" type="image/jpeg" href="images/logo.jfif">
+<link rel="apple-touch-icon" href="images/logo.jfif">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B1464;--blue-dark:#0E0A3D;--blue-light:#ECE9F8;--sky:#D9D5F0;
+  --purple:#4B3F99;--green:#0E0A3D;
+  --off:#F6F5FB;--text:#170F46;--muted:#5C5490;
+  --r:20px;--rl:32px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito','Tajawal',sans-serif;background:#fff;color:var(--text);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;background:rgba(255,255,255,0.95);backdrop-filter:blur(14px);border-bottom:1.5px solid rgba(27,20,100,0.15);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 24px rgba(27,20,100,0.13)}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-icon{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;color:#fff;letter-spacing:-1px;overflow:hidden;flex-shrink:0}
+.nav-icon img{width:100%;height:100%;object-fit:cover;display:block}
+.nav-text strong{display:block;font-size:14px;font-weight:800;color:var(--text)}
+.nav-text span{font-size:11px;color:var(--muted);font-weight:600}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{text-decoration:none;font-size:13px;font-weight:700;color:var(--muted);padding:7px 14px;border-radius:50px;transition:all .2s;position:relative}
+.nav-links a:hover{color:var(--blue-dark);background:var(--blue-light)}
+.nav-cta{background:var(--blue)!important;color:#fff!important;box-shadow:0 4px 14px rgba(27,20,100,.35)}
+.nav-cta:hover{background:var(--blue-dark)!important;transform:translateY(-1px)}
+.lang-btn{display:flex;align-items:center;gap:6px;background:var(--blue-light);border:none;border-radius:50px;padding:7px 14px;cursor:pointer;font-size:13px;font-weight:700;color:var(--blue-dark);transition:all .2s;font-family:'Nunito',sans-serif}
+.lang-btn:hover{background:var(--sky)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.nav-dots{display:none;align-items:center;justify-content:center;flex-direction:column;gap:4px;width:38px;height:38px;border-radius:50%;background:var(--blue-light);border:none;cursor:pointer;transition:background .2s}
+.nav-dots:hover{background:var(--sky)}
+.nav-dots span{width:4px;height:4px;border-radius:50%;background:var(--blue-dark);transition:transform .2s}
+
+section{padding:88px 5%}
+.sc{text-align:center;max-width:620px;margin:0 auto 52px}
+.ey{display:inline-block;font-size:12px;font-weight:800;color:var(--blue-dark);background:var(--blue-light);border-radius:50px;padding:5px 15px;margin-bottom:12px;letter-spacing:.5px}
+.stitle{font-size:clamp(26px,3.5vw,40px);font-weight:900;line-height:1.15;margin-bottom:12px}
+.ssub{font-size:16px;color:var(--muted);font-weight:600;line-height:1.7}
+
+.reveal{opacity:0;transform:translateY(28px);transition:all .65s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+
+/* PAGE HERO */
+#pagehero{
+  min-height:46vh;padding:140px 5% 70px;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;background:var(--blue-dark);text-align:center;
+}
+#pagehero::before{
+  content:'';position:absolute;inset:0;opacity:.55;
+  background-image:radial-gradient(circle at 18% 25%,rgba(255,255,255,.06) 0,transparent 45%),
+    radial-gradient(circle at 82% 75%,rgba(255,255,255,.06) 0,transparent 45%);
+  pointer-events:none;
+}
+.blob{position:absolute;border-radius:50%;opacity:.3;filter:blur(60px);animation:flt 6s ease-in-out infinite;z-index:0}
+.b1{width:380px;height:380px;background:#4B3F99;top:-120px;right:-100px}
+.b2{width:280px;height:280px;background:#1B1464;bottom:-60px;left:-80px;animation-delay:2s}
+@keyframes flt{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.05)}}
+.ph-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:50px;padding:7px 16px;font-size:13px;font-weight:700;color:var(--blue-dark);margin-bottom:18px;box-shadow:0 4px 16px rgba(0,0,0,.25);position:relative;z-index:1}
+#pagehero h1{font-size:clamp(32px,4.5vw,52px);font-weight:900;color:#fff;line-height:1.15;position:relative;z-index:1;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+#pagehero p{margin-top:14px;font-size:16px;color:rgba(255,255,255,.82);font-weight:600;max-width:560px;position:relative;z-index:1}
+
+/* ABOUT */
+#about{background:#fff}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto}
+.about-img{position:relative}
+.about-img img{width:100%;border-radius:var(--rl);display:block;box-shadow:0 16px 48px rgba(27,20,100,.18)}
+.about-badge{position:absolute;bottom:-20px;right:-20px;background:#fff;border-radius:var(--r);padding:18px 22px;box-shadow:0 12px 32px rgba(27,20,100,.18);text-align:center}
+.about-badge strong{display:block;font-size:28px;font-weight:900;color:var(--blue)}
+.about-badge span{font-size:12px;font-weight:700;color:var(--muted)}
+.about-text h2{font-size:clamp(28px,3.5vw,40px);font-weight:900;margin-bottom:14px}
+.about-text p{font-size:15px;color:var(--muted);line-height:1.8;font-weight:600;margin-bottom:14px}
+.about-list{list-style:none;margin:16px 0 24px}
+.about-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:700;color:var(--text);padding:8px 0;border-bottom:1px solid rgba(27,20,100,.1)}
+.about-list li:last-child{border:none}
+.about-list .ck{color:var(--green);font-size:18px}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:none;padding:13px 26px;border-radius:50px;font-size:15px;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 8px 24px rgba(27,20,100,.4);transition:all .25s;font-family:'Nunito',sans-serif}
+.btn-p:hover{background:var(--blue-dark);transform:translateY(-3px)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--text);border:2px solid rgba(27,20,100,.3);padding:13px 26px;border-radius:50px;font-size:15px;font-weight:800;cursor:pointer;text-decoration:none;transition:all .25s}
+.btn-s:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-3px)}
+
+/* CONTACT */
+#contact{background:linear-gradient(135deg,#F6F5FB 0%,#ECE9F8 100%)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1100px;margin:0 auto}
+.cinfo h2{font-size:34px;font-weight:900;margin-bottom:12px}
+.cinfo > p{font-size:15px;color:var(--muted);font-weight:600;line-height:1.7;margin-bottom:28px}
+.ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+.ci-ico{width:46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 14px rgba(27,20,100,.15);flex-shrink:0;margin-top:2px}
+.ci-body strong{display:block;font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px}
+.ci-body span{display:block;font-size:13px;color:var(--muted);font-weight:600;line-height:1.6}
+.ci-body a{display:block;font-size:13px;color:var(--blue-dark);font-weight:700;text-decoration:none;line-height:1.9}
+.ci-body a:hover{color:var(--blue);text-decoration:underline}
+.map-wrap{margin-top:10px;border-radius:var(--r);overflow:hidden;border:2px solid rgba(27,20,100,.2)}
+.map-wrap iframe{width:100%;height:260px;border:none;display:block}
+.cform{background:#fff;border-radius:var(--rl);padding:34px;box-shadow:0 16px 48px rgba(27,20,100,.12)}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:13px;font-weight:800;color:var(--text);margin-bottom:6px}
+.fg input,.fg textarea,.fg select{width:100%;padding:11px 14px;border-radius:11px;border:2px solid rgba(27,20,100,.2);font-size:14px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--text);background:var(--off);outline:none;transition:all .2s;resize:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(27,20,100,.1);transform:translateY(-2px)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-sub{width:100%;padding:14px;background:var(--blue);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:800;cursor:pointer;transition:all .25s;font-family:'Nunito',sans-serif;box-shadow:0 8px 24px rgba(27,20,100,.4)}
+.btn-sub:hover{background:var(--blue-dark);transform:translateY(-2px)}
+.btn-sub.sent{background:var(--green)}
+
+footer{background:var(--text);color:rgba(255,255,255,.85);padding:48px 5% 26px}
+.fi{display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto 34px;gap:40px}
+.fb strong{display:block;font-size:17px;font-weight:900;color:#fff;margin-bottom:5px}
+.fb > span{font-size:13px;opacity:.6;font-weight:600}
+.fb .far2{font-family:'Tajawal',sans-serif;direction:rtl;font-size:13px;opacity:.65;margin-top:4px}
+.soc{display:flex;gap:10px;margin-top:14px}
+.soc a{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;text-decoration:none;transition:all .2s}
+.soc a:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.flinks{display:flex;gap:40px}
+.fcol h4{font-size:12px;font-weight:800;color:var(--blue);margin-bottom:10px;letter-spacing:.5px}
+.fcol a{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:7px;transition:color .2s}
+.fcol a:hover{color:var(--blue)}
+.fbot{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;max-width:1100px;margin:0 auto;font-size:12px;opacity:.5}
+
+.en,.ar{display:block}
+body.ar .en{display:none}
+body.ar .ar{display:block}
+body.en .ar{display:none}
+body.en .en{display:block}
+
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#1B1464,#9B91E0,#F0B84B);z-index:300;transition:width .1s linear;border-radius:0 4px 4px 0}
+
+.wa-float{position:fixed;bottom:24px;left:24px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.45);z-index:250;text-decoration:none;transition:transform .25s, box-shadow .25s}
+.wa-float:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.55)}
+.wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;opacity:.6;animation:waping 2.2s infinite}
+@keyframes waping{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+
+@media(max-width:900px){
+  .contact-inner,.about-inner{grid-template-columns:1fr}
+  .about-img{display:none}
+  .fi{flex-direction:column}
+  .flinks{flex-wrap:wrap;gap:24px}
+  .nav-links{
+    display:flex;flex-direction:column;align-items:stretch;gap:2px;
+    position:absolute;top:68px;left:0;right:0;
+    background:#fff;border-bottom:1.5px solid rgba(27,20,100,.15);
+    box-shadow:0 16px 32px rgba(27,20,100,.12);
+    padding:10px 5% 16px;
+    max-height:0;overflow:hidden;opacity:0;
+    transition:max-height .35s ease, opacity .25s ease, padding .35s ease;
+  }
+  .nav-links.open{max-height:420px;opacity:1}
+  .nav-links a{padding:12px 14px;border-radius:12px;text-align:center}
+  .nav-cta{margin-top:6px}
+  .nav-dots{display:flex}
+  .nav-dots.open span{background:var(--blue)}
+}
+@media(max-width:600px){
+  .frow{grid-template-columns:1fr}
+  .wa-float{width:52px;height:52px;bottom:18px;left:18px}
+  .wa-float svg{width:26px;height:26px}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body class="en">
+
+<!-- NAV -->
+<nav id="nb">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-icon"><img src="images/logo.jfif" alt="IPS Logo"></div>
+    <div class="nav-text">
+      <strong>Pioneer Schools</strong>
+      <span>مدارس الريادة الرقمية</span>
+    </div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="en">Home</a>
+    <a href="index.html" class="ar" style="font-family:'Tajawal',sans-serif">الرئيسية</a>
+    <a href="index.html#programs" class="en">Programs</a>
+    <a href="index.html#programs" class="ar" style="font-family:'Tajawal',sans-serif">البرامج</a>
+    <a href="#about" class="en">About</a>
+    <a href="#about" class="ar" style="font-family:'Tajawal',sans-serif">عن المدرسة</a>
+    <a href="index.html#enroll" class="en">Enroll</a>
+    <a href="index.html#enroll" class="ar" style="font-family:'Tajawal',sans-serif">التسجيل</a>
+    <a href="#contact" class="nav-cta en">Contact Us</a>
+    <a href="#contact" class="nav-cta ar" style="font-family:'Tajawal',sans-serif">تواصل معنا</a>
+  </div>
+  <div class="nav-right">
+    <button class="lang-btn" onclick="toggleLang()" id="lb">🌐 العربية</button>
+    <button class="nav-dots" onclick="toggleMobileNav()" id="navDots" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section id="pagehero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div>
+    <div class="ph-badge">
+      <span class="en">🏫 About IPS</span>
+      <span class="ar" style="font-family:'Tajawal',sans-serif">🏫 عن المدرسة</span>
+    </div>
+    <h1 class="en">Built for the Curious Minds of Tomorrow</h1>
+    <h1 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">بُنيت لعقول الغد الفضولية</h1>
+    <p class="en">Learn who we are, what we stand for, and how to reach us.</p>
+    <p class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">تعرّف على هويتنا وقيمنا، وكيف يمكنك التواصل معنا.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img reveal">
+      <img src="images/robotics.png" alt="IPS student studying"/>
+      <div class="about-badge"><strong>2+</strong><span class="en">Years of Excellence</span><span class="ar" style="font-family:'Tajawal',sans-serif">سنوات من التميز</span></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="ey">About IPS | عن المدرسة</div>
+      <h2 class="en">Built for the Curious Minds of Tomorrow</h2>
+      <h2 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">بُنيت لعقول الغد الفضولية</h2>
+      <p class="en">IPS – International Digital Pioneer Schools was founded in Amman, Jordan with one mission: to give every child access to the technology skills that define the future. We believe learning should be exciting, hands-on, and deeply meaningful.</p>
+      <p class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">تأسست مدارس الريادة الرقمية الدولية في عمّان، الأردن، برسالة واحدة: منح كل طفل إمكانية الوصول إلى مهارات التكنولوجيا التي تحدد مستقبل العالم.</p>
+      <ul class="about-list">
+        <li><span class="ck">✓</span><span class="en">Certified instructors with real-world tech experience</span><span class="ar" style="font-family:'Tajawal',sans-serif">مدرّسون معتمدون بخبرة تقنية حقيقية</span></li>
+        <li><span class="ck">✓</span><span class="en">Small class sizes — max 12 students per group</span><span class="ar" style="font-family:'Tajawal',sans-serif">فصول صغيرة — بحد أقصى ١٢ طالبًا لكل مجموعة</span></li>
+        <li><span class="ck">✓</span><span class="en">Professional-grade equipment for every student</span><span class="ar" style="font-family:'Tajawal',sans-serif">معدات احترافية لكل طالب</span></li>
+        <li><span class="ck">✓</span><span class="en">Regular progress reports shared with parents</span><span class="ar" style="font-family:'Tajawal',sans-serif">تقارير تقدم منتظمة تُشارك مع أولياء الأمور</span></li>
+        <li><span class="ck">✓</span><span class="en">Competitions, showcases & graduation certificates</span><span class="ar" style="font-family:'Tajawal',sans-serif">مسابقات وعروض وشهادات تخرج</span></li>
+      </ul>
+      <a href="#contact" class="btn-p">📋 <span class="en">Book a Free Tour</span><span class="ar" style="font-family:'Tajawal',sans-serif">احجز جولة مجانية</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT + LOCATION -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="cinfo reveal">
+      <div class="ey">Get in Touch | تواصل معنا</div>
+      <h2 class="en">Ready to Join Our Family?</h2>
+      <h2 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">مستعد للانضمام إلى عائلتنا؟</h2>
+      <p class="en">We'd love to tell you more about our programs. Our team responds within 24 hours.</p>
+      <p class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">يسعدنا إخبارك بالمزيد عن برامجنا. يردّ فريقنا خلال ٢٤ ساعة.</p>
+
+      <div class="ci">
+        <div class="ci-ico">📞</div>
+        <div class="ci-body">
+          <strong class="en">Phone Numbers | أرقام الهاتف</strong>
+          <a href="tel:0799372646">079 937 2646</a>
+          <a href="tel:0796223417">079 622 3417</a>
+          <a href="tel:065712123">065 712 123</a>
+        </div>
+      </div>
+
+      <div class="ci">
+        <div class="ci-ico">📍</div>
+        <div class="ci-body">
+          <strong class="en">Address | العنوان</strong>
+          <span class="en">Al-Salam Street, Dead Sea Road<br>Naour Al-Jadida — Balaas<br>Behind Green Land, Amman, Jordan 🇯🇴</span>
+          <span class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl">شارع السلام، طريق البحر الميت<br>نوار الجديدة — بلعص<br>خلف غرين لاند، عمّان، الأردن 🇯🇴</span>
+        </div>
+      </div>
+
+      <div class="ci">
+        <div class="ci-ico">📘</div>
+        <div class="ci-body">
+          <strong>Social Media | التواصل الاجتماعي</strong>
+          <span>Facebook & Instagram: <strong>@i.p.s0</strong></span>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3388.49432516136!2d35.841285475083545!3d31.865972929986853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca7000ddf6cbf%3A0x4e54fa3a27cdf7b!2sInternational%20digital%20pioneer%20school!5e0!3m2!1sen!2sjo!4v1781688979354!5m2!1sen!2sjo"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="IPS Location — Naour Al-Jadida, Balaas, Amman">
+        </iframe>
+      </div>
+      <a href="https://maps.google.com/?q=Naour+Al-Jadida,+Balaas,+Amman,+Jordan" target="_blank" class="btn-s" style="margin-top:14px;display:inline-flex">
+        🗺️ <span class="en">Open in Google Maps</span><span class="ar" style="font-family:'Tajawal',sans-serif">افتح في خرائط جوجل</span>
+      </a>
+    </div>
+
+    <div class="cform reveal">
+      <h3 class="en" style="font-size:19px;font-weight:900;margin-bottom:6px">Send us a Message</h3>
+      <h3 class="ar" style="font-family:'Tajawal',sans-serif;direction:rtl;font-size:19px;font-weight:900;margin-bottom:6px">أرسل لنا رسالة</h3>
+      <p style="font-size:13px;color:var(--muted);font-weight:600;margin-bottom:20px" class="en">We'll respond within 24 hours.</p>
+      <p style="font-size:13px;color:var(--muted);font-weight:600;margin-bottom:20px;font-family:'Tajawal',sans-serif;direction:rtl" class="ar">سنردّ خلال ٢٤ ساعة.</p>
+      <div class="frow">
+        <div class="fg">
+          <label class="en">First Name</label><label class="ar" style="font-family:'Tajawal',sans-serif">الاسم الأول</label>
+          <input type="text" id="fFirst" placeholder="Ahmad">
+        </div>
+        <div class="fg">
+          <label class="en">Last Name</label><label class="ar" style="font-family:'Tajawal',sans-serif">اسم العائلة</label>
+          <input type="text" id="fLast" placeholder="Al-Hassan">
+        </div>
+      </div>
+      <div class="fg">
+        <label class="en">Email Address</label><label class="ar" style="font-family:'Tajawal',sans-serif">البريد الإلكتروني</label>
+        <input type="email" id="fEmail" placeholder="ahmad@example.com">
+      </div>
+      <div class="fg">
+        <label class="en">Phone Number</label><label class="ar" style="font-family:'Tajawal',sans-serif">رقم الهاتف</label>
+        <input type="tel" id="fPhone" placeholder="07X XXX XXXX">
+      </div>
+      <div class="fg">
+        <label class="en">Child's Age</label><label class="ar" style="font-family:'Tajawal',sans-serif">عمر الطفل</label>
+        <select id="fAge">
+          <option value="">Select age range...</option>
+          <option>7–9 years</option>
+          <option>10–12 years</option>
+          <option>13–16 years</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="en">Program of Interest</label><label class="ar" style="font-family:'Tajawal',sans-serif">البرنامج المهتم به</label>
+        <select id="fProgram">
+          <option value="">Select a program...</option>
+          <option>🤖 Robotics | الروبوتيكس</option>
+          <option>🖨️ 3D Printing | الطباعة ثلاثية الأبعاد</option>
+          <option>🥽 Virtual Reality | الواقع الافتراضي</option>
+          <option>📚 All Programs | جميع البرامج</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="en">Message</label><label class="ar" style="font-family:'Tajawal',sans-serif">الرسالة</label>
+        <textarea rows="4" id="fMessage" placeholder="Tell us about your child and any questions you have..."></textarea>
+      </div>
+      <button class="btn-sub" id="sbtn" onclick="handleSend()">
+        <span class="en">💬 Send via WhatsApp</span>
+        <span class="ar" style="font-family:'Tajawal',sans-serif">💬 إرسال عبر واتساب</span>
+      </button>
+      <p style="font-size:12px;color:var(--muted);font-weight:600;margin-top:10px;text-align:center" class="en">Opens WhatsApp with your message pre-filled — nothing is sent until you hit send there.</p>
+      <p style="font-size:12px;color:var(--muted);font-weight:600;margin-top:10px;text-align:center;font-family:'Tajawal',sans-serif;direction:rtl" class="ar">سيفتح واتساب مع رسالتك جاهزة — لن يتم إرسال شيء حتى تضغط إرسال هناك.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div class="fb">
+      <strong>IPS — International Digital Pioneer Schools</strong>
+      <span>Empowering kids through digital education</span>
+      <div class="far2">مدارس الريادة الرقمية الدولية — نمكّن الأطفال من خلال التعليم الرقمي</div>
+      <div class="soc">
+        <a href="https://www.facebook.com/p/International-Digital-Pioneer-Schools-مدارس-الريادة-الرقمية-الدولية-61556923075731/" title="Facebook">f</a>
+        <a href="https://www.instagram.com/i.p.s0/" title="Instagram">ig</a>
+        <a href="tel:0799372646" title="Call">📞</a>
+      </div>
+    </div>
+    <div class="flinks">
+      <div class="fcol">
+        <h4>NAVIGATE</h4>
+        <a href="index.html">Home</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="#about">About</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#discounts">Discounts</a>
+        <a href="index.html#enroll">How to Enroll</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="fcol">
+        <h4>CONTACT</h4>
+        <a href="tel:0799372646">079 937 2646</a>
+        <a href="tel:0796223417">079 622 3417</a>
+        <a href="tel:065712123">065 712 123</a>
+        <a href="https://maps.google.com/?q=Naour+Al-Jadida,+Balaas,+Amman,+Jordan" target="_blank">📍 Get Directions</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2025 International Digital Pioneer Schools. All rights reserved.</span>
+    <span>Naour Al-Jadida, Balaas — Amman, Jordan 🇯🇴</span>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a class="wa-float" href="https://wa.me/962799372646?text=مرحبًا%2C%20أرغب%20بالاستفسار%20عن%20مدارس%20IPS" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff"><path d="M16.001 3C9.106 3 3.5 8.605 3.5 15.5c0 2.36.654 4.566 1.789 6.455L3 29l7.21-2.252A12.45 12.45 0 0 0 16 28.5c6.895 0 12.5-5.605 12.5-12.5S22.895 3 16.001 3zm0 22.7c-2.05 0-3.97-.564-5.614-1.543l-.402-.238-4.279 1.336 1.36-4.168-.262-.428A10.18 10.18 0 0 1 5.3 15.5c0-5.9 4.8-10.7 10.7-10.7 5.9 0 10.7 4.8 10.7 10.7 0 5.9-4.8 10.7-10.7 10.7zm5.86-7.99c-.32-.16-1.89-.93-2.18-1.04-.293-.107-.507-.16-.72.16-.214.32-.827 1.04-1.014 1.254-.187.213-.374.24-.694.08-.32-.16-1.352-.498-2.575-1.587-.952-.85-1.595-1.9-1.782-2.22-.187-.32-.02-.493.14-.653.144-.143.32-.373.48-.56.16-.187.213-.32.32-.534.107-.213.053-.4-.027-.56-.08-.16-.72-1.734-.987-2.374-.26-.625-.524-.54-.72-.55l-.613-.01c-.213 0-.56.08-.853.4-.293.32-1.12 1.094-1.12 2.667s1.147 3.094 1.307 3.307c.16.213 2.255 3.444 5.464 4.829.763.33 1.36.527 1.824.674.766.244 1.464.21 2.016.127.615-.092 1.89-.773 2.157-1.52.267-.747.267-1.387.187-1.52-.08-.134-.293-.214-.613-.374z"/></svg>
+</a>
+
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nb').classList.toggle('scrolled',scrollY>20)
+  const sp=document.getElementById('scrollProgress')
+  const h=document.documentElement
+  const pct=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100
+  sp.style.width=pct+'%'
+},{passive:true})
+
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('vis'),i*80)
+      obs.unobserve(e.target)
+    }
+  })
+},{threshold:0.12,rootMargin:'0px 0px -40px 0px'})
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r))
+
+let isAr=false
+function toggleLang(){
+  isAr=!isAr
+  document.body.style.opacity=0
+  setTimeout(()=>{
+    document.body.className=isAr?'ar':'en'
+    document.documentElement.setAttribute('dir',isAr?'rtl':'ltr')
+    document.getElementById('lb').textContent=isAr?'🌐 English':'🌐 العربية'
+    document.body.style.opacity=1
+  },180)
+}
+
+function toggleMobileNav(){
+  const links=document.getElementById('navLinks')
+  const dots=document.getElementById('navDots')
+  const isOpen=links.classList.toggle('open')
+  dots.classList.toggle('open',isOpen)
+  dots.setAttribute('aria-expanded',isOpen)
+}
+document.querySelectorAll('#navLinks a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('navLinks').classList.remove('open')
+    document.getElementById('navDots').classList.remove('open')
+    document.getElementById('navDots').setAttribute('aria-expanded','false')
+  })
+})
+document.addEventListener('click',e=>{
+  const links=document.getElementById('navLinks')
+  const dots=document.getElementById('navDots')
+  if(links.classList.contains('open') && !links.contains(e.target) && !dots.contains(e.target)){
+    links.classList.remove('open')
+    dots.classList.remove('open')
+    dots.setAttribute('aria-expanded','false')
+  }
+})
+
+const SCHOOL_WHATSAPP = '962799372646'
+
+function handleSend(){
+  const first=document.getElementById('fFirst').value.trim()
+  const last=document.getElementById('fLast').value.trim()
+  const email=document.getElementById('fEmail').value.trim()
+  const phone=document.getElementById('fPhone').value.trim()
+  const age=document.getElementById('fAge').value
+  const program=document.getElementById('fProgram').value
+  const message=document.getElementById('fMessage').value.trim()
+
+  const lines=[]
+  lines.push(isAr ? 'مرحبًا، أرغب بالاستفسار عن IPS:' : 'Hello, I\'d like to ask about IPS:')
+  if(first||last) lines.push((isAr?'الاسم: ':'Name: ')+`${first} ${last}`.trim())
+  if(email) lines.push((isAr?'البريد الإلكتروني: ':'Email: ')+email)
+  if(phone) lines.push((isAr?'الهاتف: ':'Phone: ')+phone)
+  if(age) lines.push((isAr?'عمر الطفل: ':'Child\'s age: ')+age)
+  if(program) lines.push((isAr?'البرنامج المهتم به: ':'Program: ')+program)
+  if(message) lines.push((isAr?'الرسالة: ':'Message: ')+message)
+
+  const text=encodeURIComponent(lines.join('\n'))
+  const url=`https://wa.me/${SCHOOL_WHATSAPP}?text=${text}`
+
+  const btn=document.getElementById('sbtn')
+  btn.classList.add('sent')
+  btn.innerHTML='✅ Opening WhatsApp…'
+  window.open(url,'_blank')
+  setTimeout(()=>{
+    btn.classList.remove('sent')
+    btn.innerHTML='<span class="en">💬 Send via WhatsApp</span><span class="ar" style="font-family:Tajawal,sans-serif">💬 إرسال عبر واتساب</span>'
+  },3000)
+}
+</script>
+</body>
+</html>
